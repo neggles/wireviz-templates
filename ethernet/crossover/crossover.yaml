@@ -1,0 +1,24 @@
+connectors:
+  ETH-A: &con_ether
+    type: RJ45
+    subtype: male
+    pincount: 8
+    pinlabels: [DA+,DA-,DB+,DC+,DC-,DB-,DD+,DD-]
+  ETH-B:
+    type: RJ45
+    subtype: male
+    pincount: 8
+    pinlabels: [DB+,DB-,DA+,DD+,DD-,DA-,DC+,DC-]
+
+cables:
+  CAT6:
+    color_code: T568A
+    wirecount: 8
+    type: CAT6
+    show_name: false
+    show_wirecount: false
+
+connections:
+  - - ETH-A: [1-8]
+    - CAT6: [1-8]
+    - ETH-B: [3,6,1,7,8,2,4,5]

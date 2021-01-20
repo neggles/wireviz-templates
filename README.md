@@ -8,6 +8,7 @@ repo for some [Wireviz](https://github.com/formatc1702/WireViz) templates I've a
 
 ### [ethernet](ethernet/): it's ethernet! :O
 - [dual-100bt](ethernet/dual-100bt/): run two 10/100 connections through a single CAT5/6/7 cable
+- [crossover](ethernet/crossover/): it's a crossover cable my guy
 
 
 ### [rbs](rbs/): Ericsson RBS cellular equipment related stuff

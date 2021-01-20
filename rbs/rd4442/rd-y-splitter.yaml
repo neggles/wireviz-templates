@@ -1,0 +1,28 @@
+connectors:
+  RD 4442:
+    type: RJ45
+    subtype: male
+    pinlabels: [1A+, 1A-, 2B+, 2A-, 2A+, 2B-, 1B+, 1B-]
+  IRU-A: &con_iru
+    type: RJ45
+    subtype: male
+    pinlabels: [DA+, DA-, DB+, NC, NC, DB-, NC, NC]
+  IRU-B:
+    <<: *con_iru
+
+cables:
+  RDI:
+    color_code: T568B # auto-color wires based on a standard
+    wirecount: 8
+    type: SFTP
+    shield: true
+    show_name: false
+    show_wirecount: false
+
+connections:
+  - - RD 4442: [1A+, 1A-, 1B+, 1B-]
+    - RDI: [1, 2, 7, 8]
+    - IRU-A: [DA+, DA-, DB+, DB-] # IRU Side 1
+  - - RD 4442: [2A+, 2A-, 2B+, 2B-]
+    - RDI: [5, 4, 3, 6]
+    - IRU-B: [DA+, DA-, DB+, DB-] # IRU Side 2

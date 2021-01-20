@@ -1,0 +1,46 @@
+connectors:
+  RS232-DTE:
+    type: D-Sub
+    subtype: male
+    pincount: 9
+    pinlabels: [DCD, RXD, TXD, DTR, GND, DSR, RTS, CTS, RI]
+
+#  RS232-DCE:
+#    type: D-Sub
+#    subtype: female
+#    pincount: 9
+#    pinlabels: [DCD, TXD, RXD, DSR, GND, DTR, CTS, RTS, RI]
+
+  CON-CISCO:
+    type: RJ45
+    subtype: female
+    pincount: 8
+    pinlabels: [RTS, DTR, TXD, GNDA, GNDB, RXD, DSR, CTS]
+
+#  CON-USB:
+#    type: RJ45
+#    subtype: male
+#    pincount: 8
+#    pinlabels: [CTS, DSR, RXD, GNDA, GNDB, TXD, DTR, RTS]
+
+
+cables:
+#  CAT6:
+#    gauge: 26 AWG
+#    length: 1.2
+#    wirecount: 8
+#    color_code: T568A
+
+  RJF-DE9F:
+    gauge: 26 AWG
+    length: 0.1
+    wirecount: 8
+    colors: [BU, OG, BK, RD, GN, YE, BN, WH]
+
+connections:
+  -
+#    - CON-USB:   [CTS, DSR, RXD, GNDA, GNDB, TXD, DTR, RTS]
+#    - CAT6:      [1-8]
+    - CON-CISCO: [RTS, DTR, TXD, GNDA, GNDB, RXD, DSR, CTS]
+    - RJF-DE9F:  [1-8]
+    - RS232-DTE: [RTS, DTR, TXD, GND, GND, RXD, DSR, CTS]

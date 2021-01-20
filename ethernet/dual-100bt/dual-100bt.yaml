@@ -1,0 +1,28 @@
+connectors:
+  100M-A1: &con_100bt
+    type: RJ45
+    subtype: male
+    pincount: 8
+    pinlabels: [DA+, DA-, DB+, NC, NC, DB-, NC, NC]
+  100M-A2:
+    <<: *con_100bt
+  100M-B1:
+    <<: *con_100bt
+  100M-B2:
+    <<: *con_100bt
+
+cables:
+  CAT6:
+    color_code: T568B # auto-color wires based on a standard
+    wirecount: 8 # need to specify number of wires explicitly when using a color code
+    type: CAT6
+    show_name: false
+    show_wirecount: false
+
+connections:
+  - - 100M-A1: [DA+, DA-, DB+, DB-]
+    - CAT6: [1, 2, 3, 6]
+    - 100M-A2: [DA+, DA-, DB+, DB-]
+  - - 100M-B1: [DA+, DA-, DB+, DB-]
+    - CAT6: [4, 5, 7, 8]
+    - 100M-B2: [DA+, DA-, DB+, DB-]

@@ -1,0 +1,24 @@
+connectors:
+  RS232:
+    type: DE
+    subtype: female
+    pincount: 9
+    pinlabels: [DCD, RXD, TXD, DTR, GND, DSR, RTS, CTS, RI]
+
+  CON:
+    type: RJ45
+    subtype: female
+    pincount: 8
+    pinlabels: [RTS, DTR, TXD, GNDA, GNDB, RXD, DSR, CTS]
+
+cables:
+  Adapter:
+    colors: [BU, OG, BK, RD, GN, YE, BN, WH]
+    show_name: false
+    show_wirecount: false
+
+connections:
+  -
+    - CON: [RTS, DTR, TXD, GNDA, GNDB, RXD, DSR, CTS]
+    - Adapter:  [1-8]
+    - RS232: [RTS, DTR, TXD, GND, GND, RXD, DSR, CTS]
